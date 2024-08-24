@@ -1,0 +1,242 @@
+/* gogle font */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Markazi+Text:wght@400;500;600;700&display=swap');
+
+
+/* variables*/
+:root{
+    --green:#27ae60;
+    --orange:#f39c12;
+    --red:#e74c3c;
+    --black:#333;
+    --purple:#8a1697;
+    --ligth-color:#bbafaf;
+    --white:#fff;
+    --ligth-bg:#f6f6f6;
+    --border:0.2rem solid var(--black);
+    --box-shadow:0 0.5rem 1rem rgb(0,0,0,1);
+}
+
+*{
+    direction:rtl;
+    font-family:'Rubik',sans-serif;
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    color: var(--black);
+}
+*::selection{
+    background-color: var(--green);
+    color: var(--white);
+}
+
+*::-webkit-scrollbar{
+    height: 0.5rem;
+    width: 1rem;
+}
+
+*::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: var(--green);
+}
+body{
+    background-color: var(--ligth-bg);
+}
+html{
+    font-size: 62.%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+}
+section{
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.btn,
+.delete-btn,
+.option-btn{
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    color: var(--white);
+    font-size: 2rem;
+    padding: 1.3rem 3rem;
+    cursor: pointer;
+}
+
+
+.btn{background-color: var(--purple);}
+.delete-btn{background-color: var(--red);}
+.option-btn{background-color: var(--orange);}
+
+.btn:hover,.delete-btn:hover,.option-btn:hover{background-color: var(--ligth-color);}
+
+/*هدا حق برمجه php*/
+.message{
+    position: sticky;
+    top: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--ligth-bg);
+    padding: 2rem;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    z-index: 10000;
+}
+.message span{
+    font-size: 2rem;
+    color: var(--black);
+}
+.message i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--red);
+}
+.message i:hover{
+    color: var(--black);
+}
+
+
+.from-contianer{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.from-contianer form{
+    width: 50rem;
+    background-color: var(--white);
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    text-align: center;
+    padding: 2rem;
+}
+.from-contianer form h3{
+    font-size: 3rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+
+}
+
+.from-contianer form .box{
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    border: var(--border);
+    color: var(--purple);
+    background-color: var(--ligth-bg);
+    padding: 1.2rem 1.4rem;
+    font-size: 1.8rem;
+
+}
+.from-contianer form p {
+    margin-top: 2rem;
+    font-size: 2.2rem;
+    color: var(--black);
+}
+.from-contianer form p a{
+    color: var(--purple);
+}
+.from-contianer form p a:hover{
+    text-decoration: underline;
+}
+
+
+.header{
+    background: var(--white);
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+}
+
+.header .flex .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+.header .flex .navbar a{
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: var(--ligth-color);
+}
+.header .flex .navbar a:hover{
+    border-radius: 1rem;
+    background-color: var(--purple);
+    color: var(--white);
+    cursor: pointer;
+}
+.header .flex .icons > *{
+    font-size: 2.5rem;
+    color: var(--ligth-color);
+    cursor: pointer;
+    margin-left: 1.5rem;
+}
+.header .flex .icons > *:hover{
+    color: var(--purple);
+}
+#menu-btn{
+    display: none;
+}
+
+/* media  */
+
+@media (max-width:991px){
+
+html{
+    font-size: 55%;
+}
+
+}
+
+@media (max-width:768px){
+
+#menu-btn{
+    display: inline-block;
+}
+
+.header .flex .navbar{
+    border-top: var(--border);
+    border-bottom: var(--border);
+    background-color: var(--white);
+    position: absolute;
+    top:99%; left:0; right:0;
+    transition: .2s linear;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.header .flex .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.header .flex .navbar a{
+    display: block;
+    margin:2rem;   
+}
+
+}
+
+@media (max-width:450px){
+
+html{
+    font-size: 50%;
+}
+
+}
